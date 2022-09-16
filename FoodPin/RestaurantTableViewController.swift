@@ -30,7 +30,8 @@ class RestaurantTableViewController: UITableViewController {
         snapshot.appendItems(restaurantNames, toSection: .all)
         
         dataSource.apply(snapshot, animatingDifferences: false)
-
+        
+        tableView.separatorStyle = .none
     }
     
     
