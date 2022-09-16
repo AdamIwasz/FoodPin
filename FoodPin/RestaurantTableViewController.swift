@@ -40,10 +40,10 @@ class RestaurantTableViewController: UITableViewController {
         
         let dataSource = UITableViewDiffableDataSource<Section,String>(
             tableView: tableView,
-            cellProvider: {tableView, IndexPath, restaurantName in let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: IndexPath)
+            cellProvider: {tableView, IndexPath, restaurantName in let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: IndexPath) as! RestaurantTableViewCell
             
-            cell.textLabel?.text = restaurantName
-                cell.imageView?.image = UIImage(named: self.restaurantImages[IndexPath.row])
+            cell.nameLabel.text = restaurantName
+            cell.thumbnailImageView.image = UIImage(named: self.restaurantImages[IndexPath.row])
             
             return cell
         }

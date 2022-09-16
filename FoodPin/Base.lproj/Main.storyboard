@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="140" id="TAn-hQ-iDZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="140" id="TAn-hQ-iDZ" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TAn-hQ-iDZ" id="ex9-nv-9b6">
@@ -32,6 +32,11 @@
                                                         <constraint firstAttribute="height" constant="120" id="0zi-RH-9KK"/>
                                                         <constraint firstAttribute="width" constant="120" id="www-B8-Wuh"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-mf-qtO">
                                                     <rect key="frame" x="140" y="0.0" width="210" height="62.333333333333336"/>
@@ -66,6 +71,12 @@
                                         <constraint firstItem="HrC-6w-Ed1" firstAttribute="leading" secondItem="ex9-nv-9b6" secondAttribute="leadingMargin" id="ute-Hi-DBO"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationLabel" destination="Mmx-3s-o2q" id="U2F-Hc-NGS"/>
+                                    <outlet property="nameLabel" destination="zL8-wc-ZdS" id="SRA-uz-r1g"/>
+                                    <outlet property="thumbnailImageView" destination="FAu-Cl-gZK" id="IdX-aK-ZOT"/>
+                                    <outlet property="typeLabel" destination="WO8-FD-XeF" id="O7K-Rk-bWP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
