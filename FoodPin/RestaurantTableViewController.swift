@@ -43,7 +43,7 @@ class RestaurantTableViewController: UITableViewController {
             cellProvider: {tableView, IndexPath, restaurantName in let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: IndexPath)
             
             cell.textLabel?.text = restaurantName
-            cell.imageView?.image = UIImage(named: "restaurant")
+                cell.imageView?.image = UIImage(named: self.restaurantImages[IndexPath.row])
             
             return cell
         }
