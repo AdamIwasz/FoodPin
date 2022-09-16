@@ -32,11 +32,6 @@
                                                         <constraint firstAttribute="height" constant="120" id="0zi-RH-9KK"/>
                                                         <constraint firstAttribute="width" constant="120" id="www-B8-Wuh"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <integer key="value" value="20"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-mf-qtO">
                                                     <rect key="frame" x="140" y="0.0" width="210" height="62.333333333333336"/>
