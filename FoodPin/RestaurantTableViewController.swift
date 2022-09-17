@@ -57,7 +57,8 @@ class RestaurantTableViewController: UITableViewController {
         optionMenu.addAction(favoriteAction)
         // display the menu
         present(optionMenu, animated: true, completion: nil)
-        
+        // deselect the row
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     enum Section {

@@ -19,9 +19,12 @@ class RestaurantTableViewCell: UITableViewCell {
         }
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        // set color of checkmark to yellow
+        super.tintColor = .systemYellow
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
