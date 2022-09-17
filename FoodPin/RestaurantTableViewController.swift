@@ -17,6 +17,8 @@ class RestaurantTableViewController: UITableViewController {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    var restaurantIsFavourite = Array(repeating: false, count: 21)
+    
     lazy var dataSource = configurateDataSource()
     
     override func viewDidLoad() {
@@ -52,7 +54,8 @@ class RestaurantTableViewController: UITableViewController {
         //Add "add to favorite" action
         let favoriteAction = UIAlertAction(title: "Mark as favorite", style: .default, handler: { (action:UIAlertAction!) -> Void in
                 let cell = tableView.cellForRow(at: indexPath)
-                cell?.accessoryType = .checkmark
+            cell?.accessoryType = .checkmark
+            self.restaurantIsFavourite[indexPath.row]=true
         })
         optionMenu.addAction(favoriteAction)
         // display the menu
@@ -71,12 +74,13 @@ class RestaurantTableViewController: UITableViewController {
         
         let dataSource = UITableViewDiffableDataSource<Section,String>(
             tableView: tableView,
-            cellProvider: {tableView, IndexPath, restaurantName in let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: IndexPath) as! RestaurantTableViewCell
+            cellProvider: {tableView, indexPath, restaurantName in let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
             
                 cell.nameLabel.text = restaurantName
-                cell.locationLabel.text = self.restaurantLocations[IndexPath.row]
-                cell.typeLabel.text = self.restaurantTypes[IndexPath.row]
-                cell.thumbnailImageView.image = UIImage(named: self.restaurantImages[IndexPath.row])
+                cell.locationLabel.text = self.restaurantLocations[indexPath.row]
+                cell.typeLabel.text = self.restaurantTypes[indexPath.row]
+                cell.thumbnailImageView.image = UIImage(named: self.restaurantImages[indexPath.row])
+                cell.accessoryType = self.restaurantIsFavourite[indexPath.row] ? .checkmark : .none
             
             return cell
         }
