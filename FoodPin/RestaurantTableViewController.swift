@@ -60,18 +60,23 @@ class RestaurantTableViewController: UITableViewController {
         
         //Add "add to favorite" action
         let favoriteAction = UIAlertAction(title: "Mark as favorite", style: .default, handler: { (action:UIAlertAction!) -> Void in
-                let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
+            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+//            cell?.accessoryType = .checkmark
+            cell.heartImageView.isHidden = false
+            
             self.restaurantIsFavourite[indexPath.row] = true
         })
         
         // add "remove from favorite" action
         let removeFromFavoriteAction = UIAlertAction(title: "Remove from favorites", style: .default, handler: { (action:UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .none
+            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+            //cell?.accessoryType = .none
+            cell.heartImageView.isHidden = true
             self.restaurantIsFavourite[indexPath.row] = false
         })
+        
         optionMenu.addAction(self.restaurantIsFavourite[indexPath.row] ? removeFromFavoriteAction : favoriteAction)
+        
 //        optionMenu.addAction(favoriteAction)
         // display the menu
         present(optionMenu, animated: true, completion: nil)
@@ -84,8 +89,8 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     func configurateDataSource() -> UITableViewDiffableDataSource<Section, String>{
-        let cellIdentifier = "datacell"
-//        let cellIdentifier = "favoritecell"
+//        let cellIdentifier = "datacell"
+        let cellIdentifier = "favoritecell"
         
         let dataSource = UITableViewDiffableDataSource<Section,String>(
             tableView: tableView,
@@ -95,8 +100,9 @@ class RestaurantTableViewController: UITableViewController {
                 cell.locationLabel.text = self.restaurantLocations[indexPath.row]
                 cell.typeLabel.text = self.restaurantTypes[indexPath.row]
                 cell.thumbnailImageView.image = UIImage(named: self.restaurantImages[indexPath.row])
-                cell.accessoryType = self.restaurantIsFavourite[indexPath.row] ? .checkmark : .none
-            
+                //cell.accessoryType = self.restaurantIsFavourite[indexPath.row] ? .checkmark : .none
+                cell.heartImageView.isHidden = self.restaurantIsFavourite[indexPath.row] ? false : true
+                
             return cell
         }
         )
