@@ -39,6 +39,22 @@ class RestaurantTableViewController: UITableViewController {
         // add actions to option menu
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         optionMenu.addAction(cancelAction)
+        
+        // add "reserve a table" action
+        let reserveActionHendler = { (action:UIAlertAction!) -> Void in
+            let alertMessange = UIAlertController(title: "Not available yet", message: "Sorry, this feature is not available yet. Please retry later.", preferredStyle: .alert)
+            alertMessange.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertMessange, animated: true, completion: nil)
+        }
+        let reserveAction = UIAlertAction(title: "Reserve a table", style: .default, handler: reserveActionHendler)
+        optionMenu.addAction(reserveAction)
+        
+        //Add "add to favorite" action
+        let favoriteAction = UIAlertAction(title: "Mark as favorite", style: .default, handler: { (action:UIAlertAction!) -> Void in
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.accessoryType = .checkmark
+        })
+        optionMenu.addAction(favoriteAction)
         // display the menu
         present(optionMenu, animated: true, completion: nil)
         
@@ -49,8 +65,8 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     func configurateDataSource() -> UITableViewDiffableDataSource<Section, String>{
-//        let cellIdentifier = "datacell"
-        let cellIdentifier = "favoritecell"
+        let cellIdentifier = "datacell"
+//        let cellIdentifier = "favoritecell"
         
         let dataSource = UITableViewDiffableDataSource<Section,String>(
             tableView: tableView,
