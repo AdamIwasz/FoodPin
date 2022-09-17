@@ -30,17 +30,27 @@ class RestaurantTableViewController: UITableViewController {
         snapshot.appendItems(restaurantNames, toSection: .all)
         
         dataSource.apply(snapshot, animatingDifferences: false)
-
+        tableView.separatorStyle = .none
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        // create option menu
+        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+        // add actions to option menu
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
+        // display the menu
+        present(optionMenu, animated: true, completion: nil)
+        
+    }
     
     enum Section {
         case all
     }
     
     func configurateDataSource() -> UITableViewDiffableDataSource<Section, String>{
-        let cellIdentifier = "datacell"
-        
+//        let cellIdentifier = "datacell"
+        let cellIdentifier = "favoritecell"
         
         let dataSource = UITableViewDiffableDataSource<Section,String>(
             tableView: tableView,
