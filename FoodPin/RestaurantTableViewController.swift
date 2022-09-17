@@ -23,7 +23,7 @@ class RestaurantTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.dataSource = dataSource
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
@@ -38,6 +38,13 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         // create option menu
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+        if let popoverController = optionMenu.popoverPresentationController{
+            if let cell = tableView.cellForRow(at: indexPath){
+                popoverController.sourceView = cell
+                popoverController.sourceRect = cell.bounds
+            }
+        }
+        
         // add actions to option menu
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         optionMenu.addAction(cancelAction)
@@ -55,9 +62,17 @@ class RestaurantTableViewController: UITableViewController {
         let favoriteAction = UIAlertAction(title: "Mark as favorite", style: .default, handler: { (action:UIAlertAction!) -> Void in
                 let cell = tableView.cellForRow(at: indexPath)
             cell?.accessoryType = .checkmark
-            self.restaurantIsFavourite[indexPath.row]=true
+            self.restaurantIsFavourite[indexPath.row] = true
         })
-        optionMenu.addAction(favoriteAction)
+        
+        // add "remove from favorite" action
+        let removeFromFavoriteAction = UIAlertAction(title: "Remove from favorites", style: .default, handler: { (action:UIAlertAction!) -> Void in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .none
+            self.restaurantIsFavourite[indexPath.row] = false
+        })
+        optionMenu.addAction(self.restaurantIsFavourite[indexPath.row] ? removeFromFavoriteAction : favoriteAction)
+//        optionMenu.addAction(favoriteAction)
         // display the menu
         present(optionMenu, animated: true, completion: nil)
         // deselect the row
