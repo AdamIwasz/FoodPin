@@ -85,7 +85,7 @@ class RestaurantTableViewController: UITableViewController {
             
             self.restaurants[indexPath.row].isFavorite = self.restaurants[indexPath.row].isFavorite ? false : true
             
-            cell.accessoryType = self.restaurants[indexPath.row].isFavorite ? .checkmark : .none
+            //cell.accessoryType = self.restaurants[indexPath.row].isFavorite ? .checkmark : .none
         })
         
         optionMenu.addAction(favoriteAction)
@@ -109,11 +109,13 @@ class RestaurantTableViewController: UITableViewController {
             tableView: tableView,
             cellProvider: {tableView, indexPath, restaurant in let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
             
-                cell.nameLabel.text = restaurant.name
-                cell.locationLabel.text = restaurant.location
-                cell.typeLabel.text = restaurant.type
-                cell.thumbnailImageView.image = UIImage(named: restaurant.image)
-                cell.heartImageView.isHidden = restaurant.isFavorite ? false : true
+                cell.nameLabel.text = self.restaurants[indexPath.row].name
+                cell.locationLabel.text = self.restaurants[indexPath.row].location
+                cell.typeLabel.text = self.restaurants[indexPath.row].type
+                cell.thumbnailImageView.image = UIImage(named: self.restaurants[indexPath.row].image)
+                cell.heartImageView.isHidden = self.restaurants[indexPath.row].isFavorite ? false : true
+                //cell.accessoryType = self.restaurants[indexPath.row].isFavorite ? .checkmark : .none
+                
                 
             return cell
         }
