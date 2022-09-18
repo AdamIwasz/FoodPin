@@ -35,7 +35,7 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "London", image: "cask", isFavorite: false)
     ]
     
-    lazy var dataSource = configurateDataSource()
+    lazy var dataSource = configureDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,32 +95,76 @@ class RestaurantTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
-    enum Section {
-        case all
+    //MARK: Configurate swipe left actions
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        
+        // get the selected restaurant
+        guard let restaurant = self.dataSource.itemIdentifier(for: indexPath) else {
+            return UISwipeActionsConfiguration()
+        }
+        
+        // Delete action
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            
+            var snapshot = self.dataSource.snapshot()
+            snapshot.deleteItems([restaurant])
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+            
+            completionHandler(true)
+        }
+        
+        // Share action
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+            let defaultText = "Just check in at " + restaurant.name
+            
+            let activityController : UIActivityViewController
+            
+            if let imageToShare = UIImage(named: restaurant.image){
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            } else {
+                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            }
+            self.present(activityController, animated: true, completion: nil)
+            
+            completionHandler(true)
+        }
+        
+        // Delete action button customization
+        deleteAction.backgroundColor = UIColor.systemRed
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        // Share action button cutomization
+        shareAction.backgroundColor = UIColor.systemOrange
+        shareAction.image = UIImage(systemName: "square.and.arrow.up")
+        
+        // configure both action as swipe action
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
     }
     
     
     // MARK: Configurate data source
-    func configurateDataSource() -> UITableViewDiffableDataSource<Section, Restaurant>{
+    func configureDataSource() -> RestaurantDiffableDataSource {
+
         let cellIdentifier = "datacell"
-//        let cellIdentifier = "favoritecell"
-        
-        let dataSource = UITableViewDiffableDataSource<Section, Restaurant>(
+
+        let dataSource = RestaurantDiffableDataSource(
             tableView: tableView,
-            cellProvider: {tableView, indexPath, restaurant in let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
-            
-                cell.nameLabel.text = self.restaurants[indexPath.row].name
-                cell.locationLabel.text = self.restaurants[indexPath.row].location
-                cell.typeLabel.text = self.restaurants[indexPath.row].type
-                cell.thumbnailImageView.image = UIImage(named: self.restaurants[indexPath.row].image)
-                cell.heartImageView.isHidden = self.restaurants[indexPath.row].isFavorite ? false : true
-                //cell.accessoryType = self.restaurants[indexPath.row].isFavorite ? .checkmark : .none
-                
-                
-            return cell
-        }
+            cellProvider: {  tableView, indexPath, restaurant in
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
+
+                cell.nameLabel.text = restaurant.name
+                cell.locationLabel.text = restaurant.location
+                cell.typeLabel.text = restaurant.type
+                cell.thumbnailImageView.image = UIImage(named: restaurant.image)
+                cell.heartImageView.isHidden = restaurant.isFavorite ? false : true
+
+                return cell
+            }
         )
-        
+
         return dataSource
     }
 }
