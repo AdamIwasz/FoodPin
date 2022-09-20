@@ -125,6 +125,13 @@ class RestaurantTableViewController: UITableViewController {
             } else {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             }
+            // Popover for iPad
+            if let popoverControler = activityController.popoverPresentationController{
+                if let cell = tableView.cellForRow(at: indexPath){
+                    popoverControler.sourceView = cell
+                    popoverControler.sourceRect = cell.bounds
+                }
+            }
             self.present(activityController, animated: true, completion: nil)
             
             completionHandler(true)
@@ -144,7 +151,30 @@ class RestaurantTableViewController: UITableViewController {
         return swipeConfiguration
     }
     
-    
+    // MARK: Configurate swipe right actions
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //favoriteAction
+        let favoriteAction = UIContextualAction(style: .normal, title: ""){
+            (action, sourceView, completionHandler) in
+            
+            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+            
+            cell.heartImageView.isHidden = self.restaurants[indexPath.row].isFavorite
+            
+            self.restaurants[indexPath.row].isFavorite = self.restaurants[indexPath.row].isFavorite ? false : true
+            
+            completionHandler(true)
+        }
+        
+        favoriteAction.backgroundColor = UIColor.systemIndigo
+        favoriteAction.image = self.restaurants[indexPath.row].isFavorite ? UIImage(systemName: "heart.slash.fill") : UIImage(systemName: "heart.fill")
+        
+        let swipeAction = UISwipeActionsConfiguration(actions: [favoriteAction])
+        
+        return swipeAction
+        
+    }
     // MARK: Configurate data source
     func configureDataSource() -> RestaurantDiffableDataSource {
 
