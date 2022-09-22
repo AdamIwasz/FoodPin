@@ -81,7 +81,7 @@
                                     <outlet property="nameLabel" destination="zL8-wc-ZdS" id="SRA-uz-r1g"/>
                                     <outlet property="thumbnailImageView" destination="FAu-Cl-gZK" id="IdX-aK-ZOT"/>
                                     <outlet property="typeLabel" destination="WO8-FD-XeF" id="O7K-Rk-bWP"/>
-                                    <segue destination="euW-Xe-dcq" kind="show" id="LXv-gy-0cb"/>
+                                    <segue destination="euW-Xe-dcq" kind="show" identifier="showRestaurantDetail" id="LXv-gy-0cb"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritecell" id="ceC-hQ-YNJ" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
@@ -152,7 +152,7 @@
                                     <outlet property="nameLabel" destination="66P-dx-SIG" id="sF8-aH-Lew"/>
                                     <outlet property="thumbnailImageView" destination="tjQ-70-hvm" id="IT5-kS-MEp"/>
                                     <outlet property="typeLabel" destination="Gay-ln-Drx" id="021-sY-lXa"/>
-                                    <segue destination="euW-Xe-dcq" kind="show" id="g3h-Gu-W08"/>
+                                    <segue destination="euW-Xe-dcq" kind="show" identifier="showRestaurantDetail" id="g3h-Gu-W08"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -178,6 +178,30 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="whe-OJ-qdg">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FKe-IF-WJc">
+                                <rect key="frame" x="30" y="128" width="330" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIm-7Z-ZkP">
+                                        <rect key="frame" x="140" y="0.0" width="50" height="23"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR1-08-5LX">
+                                        <rect key="frame" x="137.33333333333334" y="31" width="55.333333333333343" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgq-Yk-ygS">
+                                        <rect key="frame" x="149.33333333333334" y="56" width="31.666666666666657" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T9j-nC-nM1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -185,17 +209,25 @@
                             <constraint firstItem="whe-OJ-qdg" firstAttribute="top" secondItem="2B8-Xc-mhT" secondAttribute="top" id="2D9-C1-uab"/>
                             <constraint firstAttribute="bottom" secondItem="whe-OJ-qdg" secondAttribute="bottom" id="41X-Q3-sll"/>
                             <constraint firstItem="whe-OJ-qdg" firstAttribute="leading" secondItem="2B8-Xc-mhT" secondAttribute="leading" id="7TS-HY-WGb"/>
+                            <constraint firstItem="T9j-nC-nM1" firstAttribute="trailing" secondItem="FKe-IF-WJc" secondAttribute="trailing" constant="30" id="IaM-bl-fgo"/>
+                            <constraint firstItem="FKe-IF-WJc" firstAttribute="centerX" secondItem="2B8-Xc-mhT" secondAttribute="centerX" id="JLP-Dh-OED"/>
+                            <constraint firstItem="FKe-IF-WJc" firstAttribute="leading" secondItem="T9j-nC-nM1" secondAttribute="leading" constant="30" id="a5X-vf-x0l"/>
                             <constraint firstAttribute="trailing" secondItem="whe-OJ-qdg" secondAttribute="trailing" id="qBv-H4-aEM"/>
+                            <constraint firstItem="FKe-IF-WJc" firstAttribute="top" secondItem="T9j-nC-nM1" secondAttribute="top" constant="40" id="zSw-Hp-0rm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pf8-Kh-moj"/>
                     <connections>
                         <outlet property="restaurantImageView" destination="whe-OJ-qdg" id="mVy-ZY-1DE"/>
+                        <outlet property="restaurantInformationStack" destination="FKe-IF-WJc" id="qtf-lV-s4H"/>
+                        <outlet property="restaurantLocationLabel" destination="BR1-08-5LX" id="T66-3X-nHL"/>
+                        <outlet property="restaurantNameLabel" destination="bIm-7Z-ZkP" id="5TA-av-ebY"/>
+                        <outlet property="restaurantTypeLabel" destination="rgq-Yk-ygS" id="Cf6-m3-pPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Gd-zV-6Ru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="100"/>
+            <point key="canvasLocation" x="1987.6923076923076" y="99.526066350710892"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L45-lA-TdE">

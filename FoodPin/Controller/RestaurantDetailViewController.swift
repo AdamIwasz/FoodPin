@@ -10,13 +10,27 @@ import UIKit
 class RestaurantDetailViewController: UIViewController {
 
     @IBOutlet var restaurantImageView: UIImageView!
-
-    var restaurantImageName = ""
+    @IBOutlet var restaurantNameLabel: UILabel!
+    @IBOutlet var restaurantLocationLabel: UILabel!
+    @IBOutlet var restaurantTypeLabel: UILabel!
+    @IBOutlet var restaurantInformationStack: UIStackView!{
+        didSet{
+            restaurantInformationStack.layer.cornerRadius = 20
+            restaurantInformationStack.clipsToBounds = true
+        }
+    }
+    
+    
+    var restaurnt = Restaurant()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.largeTitleDisplayMode = .never
+        restaurantImageView.image = UIImage(named: restaurnt.image)
+        restaurantNameLabel.text = restaurnt.name
+        restaurantLocationLabel.text = restaurnt.location
+        restaurantTypeLabel.text = restaurnt.type
+        
     }
     
 

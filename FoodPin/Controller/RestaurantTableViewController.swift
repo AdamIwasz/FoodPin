@@ -36,7 +36,7 @@ class RestaurantTableViewController: UITableViewController {
     ]
     
     lazy var dataSource = configureDataSource()
-    
+    // MARK: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.cellLayoutMarginsFollowReadableWidth = true
@@ -176,6 +176,16 @@ class RestaurantTableViewController: UITableViewController {
         
         return swipeAction
         
+    }
+    
+    //MARK: Configurate seague
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail"{
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationControler = segue.destination as! RestaurantDetailViewController
+                destinationControler.restaurnt = restaurants[indexPath.row]
+            }
+        }
     }
     // MARK: Configurate data source
     func configureDataSource() -> RestaurantDiffableDataSource {
