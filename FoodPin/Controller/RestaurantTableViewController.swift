@@ -48,9 +48,28 @@ class RestaurantTableViewController: UITableViewController {
         snapshot.appendItems(restaurants, toSection: .all)
         
         dataSource.apply(snapshot, animatingDifferences: false)
+        
+        // Set lack of separator between tableView cells
         tableView.separatorStyle = .none
         
+        // Set prefersLargeTitles to true
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // Customization of navigationBar
+        if let apperance = navigationController?.navigationBar.standardAppearance{
+            apperance.configureWithTransparentBackground()
+            
+            if let customFont = UIFont(name: "Nunito-Bold", size: 45.0) {
+                apperance.titleTextAttributes = [.foregroundColor: UIColor(red: 218/255, green: 96/255, blue: 51/255, alpha: 1.0)]
+                apperance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 218/255, green: 96/255, blue: 51/255, alpha: 1.0), .font: customFont]
+            }
+            
+            navigationController?.navigationBar.standardAppearance = apperance
+            navigationController?.navigationBar.compactAppearance = apperance
+            navigationController?.navigationBar.scrollEdgeAppearance = apperance
+            
+        }
+        
     }
     
     // MARK: Actions for didSelectRowAt
