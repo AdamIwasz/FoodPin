@@ -52,16 +52,13 @@ class RestaurantTableViewController: UITableViewController {
         // Set lack of separator between tableView cells
         tableView.separatorStyle = .none
         
-        // Set prefersLargeTitles to true
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
         // Customization of navigationBar
         if let apperance = navigationController?.navigationBar.standardAppearance{
             apperance.configureWithTransparentBackground()
             
             if let customFont = UIFont(name: "Nunito-Bold", size: 45.0) {
-                apperance.titleTextAttributes = [.foregroundColor: UIColor(red: 218/255, green: 96/255, blue: 51/255, alpha: 1.0)]
-                apperance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 218/255, green: 96/255, blue: 51/255, alpha: 1.0), .font: customFont]
+                apperance.titleTextAttributes = [.foregroundColor: UIColor(named: "NavigationBarTitle")!]
+                apperance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: "NavigationBarTitle")!, .font: customFont]
             }
             
             navigationController?.navigationBar.standardAppearance = apperance
@@ -69,7 +66,18 @@ class RestaurantTableViewController: UITableViewController {
             navigationController?.navigationBar.scrollEdgeAppearance = apperance
             
         }
+        // Set prefersLargeTitles to true
+        navigationController?.navigationBar.prefersLargeTitles = true
         
+        navigationItem.backButtonTitle = ""
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     // MARK: Actions for didSelectRowAt
@@ -130,6 +138,7 @@ class RestaurantTableViewController: UITableViewController {
             
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([restaurant])
+            self.restaurants.remove(at: indexPath.row)
             self.dataSource.apply(snapshot, animatingDifferences: true)
             
             completionHandler(true)
@@ -216,11 +225,11 @@ class RestaurantTableViewController: UITableViewController {
             cellProvider: {  tableView, indexPath, restaurant in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
 
-                cell.nameLabel.text = restaurant.name
-                cell.locationLabel.text = restaurant.location
-                cell.typeLabel.text = restaurant.type
-                cell.thumbnailImageView.image = UIImage(named: restaurant.image)
-                cell.heartImageView.isHidden = restaurant.isFavorite ? false : true
+                cell.nameLabel.text = self.restaurants[indexPath.row].name
+                cell.locationLabel.text = self.restaurants[indexPath.row].location
+                cell.typeLabel.text = self.restaurants[indexPath.row].type
+                cell.thumbnailImageView.image = UIImage(named: self.restaurants[indexPath.row].image)
+                cell.heartImageView.isHidden = self.restaurants[indexPath.row].isFavorite ? false : true
 
                 return cell
             }
