@@ -13,6 +13,10 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
     
+    @IBAction func close(segue: UIStoryboardSegue){
+        dismiss(animated: true, completion: nil)
+    }
+    
     var restaurnt = Restaurant()
     
     override func viewDidLoad() {
@@ -35,6 +39,7 @@ class RestaurantDetailViewController: UIViewController {
         navigationController?.hidesBarsOnSwipe = false
          
         navigationItem.backButtonTitle = ""
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,10 +54,23 @@ class RestaurantDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMap" {
+        switch segue.identifier {
+        case "showMap":
             let destinationController = segue.destination as! MapViewController
             destinationController.restaurant = restaurnt
+        case "showReview":
+            let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurnt
+        default: break
         }
+        
+    }
+    
+    @IBAction func favoriteAction(sender: UIButton){
+        restaurnt.isFavorite = restaurnt.isFavorite ? false : true
+        let heartImage = restaurnt.isFavorite ? "heart.fill" : "heart"
+        headerView.heartButton.tintColor = restaurnt.isFavorite ? .systemYellow : .white
+        headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
     }
     
 }

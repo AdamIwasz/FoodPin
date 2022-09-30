@@ -39,6 +39,8 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.dataSource = dataSource
         
@@ -78,6 +80,7 @@ class RestaurantTableViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.hidesBarsOnSwipe = true
+    
     }
     
     // MARK: Actions for didSelectRowAt

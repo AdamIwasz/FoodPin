@@ -27,6 +27,7 @@
 		051DCBA928E1BD6B0068AE61 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051DCBA828E1BD6B0068AE61 /* MapKit.framework */; };
 		051DCBAD28E1C1360068AE61 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051DCBAC28E1C1360068AE61 /* RestaurantDetailMapCell.swift */; };
 		051DCBAF28E1D2AC0068AE61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051DCBAE28E1D2AC0068AE61 /* MapViewController.swift */; };
+		051DCBB128E4C6480068AE61 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051DCBB028E4C6480068AE61 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		051DCBA828E1BD6B0068AE61 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		051DCBAC28E1C1360068AE61 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
 		051DCBAE28E1D2AC0068AE61 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		051DCBB028E4C6480068AE61 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				051DCB9228DA5C8A0068AE61 /* RestaurantDetailViewController.swift */,
 				051DCBA528DF748D0068AE61 /* NavigationController.swift */,
 				051DCBAE28E1D2AC0068AE61 /* MapViewController.swift */,
+				051DCBB028E4C6480068AE61 /* ReviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			files = (
 				051DCB8928D75CE90068AE61 /* Restaurant.swift in Sources */,
 				051DCBA628DF748D0068AE61 /* NavigationController.swift in Sources */,
+				051DCBB128E4C6480068AE61 /* ReviewViewController.swift in Sources */,
 				051DCB9F28DCE71C0068AE61 /* RestaurantDetailTextCell.swift in Sources */,
 				051DCB8728D4A9B70068AE61 /* RestaurantTableViewCell.swift in Sources */,
 				051DCB7128D466E10068AE61 /* AppDelegate.swift in Sources */,
