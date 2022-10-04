@@ -17,6 +17,30 @@ class RestaurantDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func rateRestaurant(segue: UIStoryboardSegue){
+        
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        
+        dismiss(animated: true, completion: {
+            
+            if let raiting = Restaurant.Rating(rawValue: identifier){
+                self.restaurnt.rating = raiting
+                self.headerView.ratingImageView.image = UIImage(named: raiting.image)
+            }
+            
+            let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
+            self.headerView.ratingImageView.transform = scaleTransform
+            self.headerView.ratingImageView.alpha = 0.0
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.7, options: [], animations: {
+                self.headerView.ratingImageView.transform = .identity
+                self.headerView.ratingImageView.alpha = 1.0
+            }, completion: nil)
+        })
+    }
+    
     var restaurnt = Restaurant()
     
     override func viewDidLoad() {
@@ -30,6 +54,11 @@ class RestaurantDetailViewController: UIViewController {
         let heartImage = restaurnt.isFavorite ? "heart.fill" : "heart"
         headerView.heartButton.tintColor = restaurnt.isFavorite ? .systemYellow : .white
         headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
+        
+        // chceck if rating is already set, if so set ratingImageView image
+        if let raiting = self.restaurnt.rating{
+            self.headerView.ratingImageView.image = UIImage(named: raiting.image)
+        }
         
         tableView.separatorStyle = .none
         tableView.delegate = self
