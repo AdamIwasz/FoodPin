@@ -29,7 +29,13 @@ class RestaurantDetailViewController: UIViewController {
             if let raiting = Restaurant.Rating(rawValue: identifier){
                 self.restaurnt.rating = raiting
                 self.headerView.ratingImageView.image = UIImage(named: raiting.image)
+                
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                    appDelegate.saveContext()
+                }
+                
             }
+            
             
             let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
             self.headerView.ratingImageView.transform = scaleTransform
@@ -50,7 +56,7 @@ class RestaurantDetailViewController: UIViewController {
         
         headerView.nameLabel.text = restaurnt.name
         headerView.typeLabel.text = restaurnt.type
-        headerView.headerImageView.image = UIImage(named: restaurnt.image)
+        headerView.headerImageView.image = UIImage(data: restaurnt.image)
         
         let heartImage = restaurnt.isFavorite ? "heart.fill" : "heart"
         headerView.heartButton.tintColor = restaurnt.isFavorite ? .systemYellow : .white
@@ -69,6 +75,10 @@ class RestaurantDetailViewController: UIViewController {
         navigationController?.hidesBarsOnSwipe = false
          
         navigationItem.backButtonTitle = ""
+        
+        if let rating = restaurnt.rating {
+            headerView.ratingImageView.image = UIImage(named: rating.image)
+        }
         
     }
     
@@ -101,6 +111,11 @@ class RestaurantDetailViewController: UIViewController {
         let heartImage = restaurnt.isFavorite ? "heart.fill" : "heart"
         headerView.heartButton.tintColor = restaurnt.isFavorite ? .systemYellow : .white
         headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            appDelegate.saveContext()
+        }
+        
     }
     
 }
@@ -116,7 +131,7 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
         switch indexPath.row{
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailTextCell.self), for: indexPath) as! RestaurantDetailTextCell
-            cell.descriptionLabel.text = restaurnt.description
+            cell.descriptionLabel.text = restaurnt.summary
             cell.selectionStyle = .none
             
             return cell

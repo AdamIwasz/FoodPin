@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class NewRestaurantController: UITableViewController {
 
+    var restaurant: Restaurant!
+    
     @IBOutlet var photoImageView: UIImageView!{
         didSet{
             photoImageView.layer.cornerRadius = 10.0
@@ -92,7 +95,24 @@ class NewRestaurantController: UITableViewController {
         print("Phone: " + phoneTextField.text!)
         print("Description: " + descriptionTextView.text!)
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            restaurant = Restaurant(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameTextField.text!
+            restaurant.type = typeTextField.text!
+            restaurant.location = addressTextField.text!
+            restaurant.phone = phoneTextField.text!
+            restaurant.summary = descriptionTextView.text
+            restaurant.isFavorite = false
+
+            if let imageData = photoImageView.image?.pngData(){
+                restaurant.image = imageData
+            }
+
+            print("Saving data to context... ")
+            appDelegate.saveContext()
+        }
         
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

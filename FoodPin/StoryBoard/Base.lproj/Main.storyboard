@@ -171,8 +171,23 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emptyRestaurantView" destination="0oM-O5-z88" id="Uya-P1-4R3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzM-EH-wsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="iyE-mf-hFG">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptydata" translatesAutoresizingMaskIntoConstraints="NO" id="0oM-O5-z88">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="2gu-j6-cFP"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="943.07692307692309" y="99.526066350710892"/>
         </scene>
@@ -223,20 +238,6 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHM-G4-IJQ">
-                                            <rect key="frame" x="343" y="18" width="37" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="37" id="098-jn-7KL"/>
-                                                <constraint firstAttribute="height" constant="31" id="Rhm-6n-Aa3"/>
-                                            </constraints>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
-                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
-                                            </buttonConfiguration>
-                                            <connections>
-                                                <action selector="favoriteActionWithSender:" destination="euW-Xe-dcq" eventType="touchDown" id="VWt-vI-Wf1"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -246,7 +247,6 @@
                                         <constraint firstItem="CH2-tf-M1G" firstAttribute="top" secondItem="A7j-bu-hgl" secondAttribute="top" id="GfH-L8-gUe"/>
                                         <constraint firstAttribute="bottom" secondItem="uQb-zt-YLQ" secondAttribute="bottom" id="GxW-KG-ZUg"/>
                                         <constraint firstItem="uQb-zt-YLQ" firstAttribute="top" secondItem="A7j-bu-hgl" secondAttribute="top" id="ICB-mA-M26"/>
-                                        <constraint firstItem="GHM-G4-IJQ" firstAttribute="top" secondItem="A7j-bu-hgl" secondAttribute="topMargin" constant="10" id="Js5-Lu-J4B"/>
                                         <constraint firstAttribute="trailing" secondItem="Hx9-sX-tub" secondAttribute="trailing" constant="150" id="Ovj-fM-Byp"/>
                                         <constraint firstItem="uQb-zt-YLQ" firstAttribute="leading" secondItem="A7j-bu-hgl" secondAttribute="leading" id="SAX-LW-6n3"/>
                                         <constraint firstAttribute="bottom" secondItem="Hx9-sX-tub" secondAttribute="bottom" constant="20" id="c2H-cI-WUY"/>
@@ -254,7 +254,6 @@
                                         <constraint firstItem="Hx9-sX-tub" firstAttribute="leading" secondItem="A7j-bu-hgl" secondAttribute="leading" constant="20" id="m2L-EP-xzO"/>
                                         <constraint firstAttribute="trailing" secondItem="Eh0-GS-9vG" secondAttribute="trailing" constant="20" id="ryo-eH-TGU"/>
                                         <constraint firstAttribute="bottom" secondItem="CH2-tf-M1G" secondAttribute="bottom" id="tfR-hl-cfY"/>
-                                        <constraint firstAttribute="trailing" secondItem="GHM-G4-IJQ" secondAttribute="trailing" constant="10" id="x6A-gy-cfn"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="headerImageView" destination="CH2-tf-M1G" id="x2u-Ab-7N0"/>
@@ -415,7 +414,25 @@
                             <constraint firstItem="L8p-mW-zlD" firstAttribute="top" secondItem="2B8-Xc-mhT" secondAttribute="top" id="qYF-vJ-Ihe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Pf8-Kh-moj"/>
+                    <navigationItem key="navigationItem" id="Pf8-Kh-moj">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="JQn-dt-g6i">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GHM-G4-IJQ">
+                                <rect key="frame" x="343" y="18" width="37" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="098-jn-7KL"/>
+                                    <constraint firstAttribute="height" constant="31" id="Rhm-6n-Aa3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="favoriteActionWithSender:" destination="euW-Xe-dcq" eventType="touchDown" id="VWt-vI-Wf1"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="390" height="1200"/>
                     <connections>
                         <outlet property="headerView" destination="A7j-bu-hgl" id="Hnb-yU-Ogi"/>
@@ -847,6 +864,7 @@
     <resources>
         <image name="angry" width="78" height="103"/>
         <image name="cool" width="78" height="83"/>
+        <image name="emptydata" width="1440" height="1024"/>
         <image name="happy" width="78" height="86"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
