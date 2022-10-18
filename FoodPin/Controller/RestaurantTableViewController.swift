@@ -14,6 +14,7 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: Initializing restaurants
     var fetchResultController: NSFetchedResultsController<Restaurant>!
     var restaurants: [Restaurant] = []
+    var searchController: UISearchController!
     
     @IBOutlet var emptyRestaurantView: UIView!
     
@@ -58,8 +59,29 @@ class RestaurantTableViewController: UITableViewController {
         tableView.backgroundView = emptyRestaurantView
         tableView.backgroundView?.isHidden = restaurants.count == 0 ? false : true
         
+        // search bar
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.backgroundImage = UIImage()
+        searchController.searchBar.tintColor = UIColor(named: "NavigationBarTitle")
+        tableView.tableHeaderView = searchController.searchBar
+        
     }
     
+    // MARK: viewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough"){
+            return
+        }
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController{
+            present(walkthroughViewController, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -121,6 +143,11 @@ class RestaurantTableViewController: UITableViewController {
             return UISwipeActionsConfiguration()
         }
         
+        // Check if search bar is active then disable all swipe actions
+        if searchController.isActive{
+            return UISwipeActionsConfiguration()
+        }
+        
         // Delete action
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
             
@@ -178,6 +205,11 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: Configurate swipe right actions
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+        // Check if search bar is active then disable all swipe actions
+        if searchController.isActive{
+            return UISwipeActionsConfiguration()
+        }
+        
         //favoriteAction
         let favoriteAction = UIContextualAction(style: .normal, title: ""){
             (action, sourceView, completionHandler) in
@@ -210,6 +242,7 @@ class RestaurantTableViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationControler = segue.destination as! RestaurantDetailViewController
                 destinationControler.restaurnt = restaurants[indexPath.row]
+                searchController.isActive = false
             }
         }
     }
@@ -237,8 +270,13 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     // MARK: Fetch restaurant data
-    func fetchRestaurantData(){
+    func fetchRestaurantData(searchText: String = ""){
         let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        
+        if !searchText.isEmpty{
+            fetchRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@ or location CONTAINS[c] %@", searchText, searchText)
+        }
+        
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -249,7 +287,7 @@ class RestaurantTableViewController: UITableViewController {
             
             do {
                 try fetchResultController.performFetch()
-                updateSnapshot()
+                updateSnapshot(animatingChange: searchText.isEmpty ? false : true)
             }catch{
                 print(error)
             }
@@ -275,5 +313,15 @@ class RestaurantTableViewController: UITableViewController {
 extension RestaurantTableViewController: NSFetchedResultsControllerDelegate{
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         updateSnapshot()
+    }
+}
+
+extension RestaurantTableViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text
+        else{
+            return
+        }
+        fetchRestaurantData(searchText: searchText)
     }
 }
