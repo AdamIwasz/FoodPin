@@ -15,19 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let navBarApperance = UINavigationBarAppearance()
-        
+        // MARK: Back button customization
         var backButtonImage = UIImage(systemName: "arrow.backward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20.0, weight: .bold))
         
         backButtonImage = backButtonImage?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: -10.0, bottom: 0, right: 0))
         
-        navBarApperance.setBackIndicatorImage(backButtonImage, transitionMaskImage: backButtonImage)
         
+        // MARK: NavBar customization
+        let navBarApperance = UINavigationBarAppearance()
+        navBarApperance.setBackIndicatorImage(backButtonImage, transitionMaskImage: backButtonImage)
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().standardAppearance = navBarApperance
         UINavigationBar.appearance().compactAppearance = navBarApperance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarApperance
+        
+        // MARK: TabBar customization
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        UITabBar.appearance().tintColor = UIColor(named: "NavigationBarTitle")
+        UITabBar.appearance().standardAppearance = tabBarAppearance
         
         return true
     }
