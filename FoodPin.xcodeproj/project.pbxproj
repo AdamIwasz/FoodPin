@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0505ED0429053D390043B61D /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505ED0329053D390043B61D /* DiscoverTableViewController.swift */; };
+		0505ED06290A70C90043B61D /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505ED05290A70C90043B61D /* DiscoverTableViewCell.swift */; };
 		051DCB7128D466E10068AE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051DCB7028D466E10068AE61 /* AppDelegate.swift */; };
 		051DCB7328D466E10068AE61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051DCB7228D466E10068AE61 /* SceneDelegate.swift */; };
 		051DCB7828D466E10068AE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051DCB7628D466E10068AE61 /* Main.storyboard */; };
@@ -42,6 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0505ED0229047DC40043B61D /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
+		0505ED0329053D390043B61D /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		0505ED05290A70C90043B61D /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		051DCB6D28D466E10068AE61 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		051DCB7028D466E10068AE61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		051DCB7228D466E10068AE61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 		051DCB6F28D466E10068AE61 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				0505ED0229047DC40043B61D /* FoodPin.entitlements */,
 				051DCBA228DF6FBB0068AE61 /* Extensions */,
 				051DCB9428DCC2CF0068AE61 /* Resources */,
 				051DCB8D28D765C50068AE61 /* View */,
@@ -139,6 +145,7 @@
 				05DF096028F95CAD0072A1F8 /* WalkthroughViewController.swift */,
 				057FE08F29006AAF00FC9C69 /* AboutTableViewController.swift */,
 				057FE091290076B900FC9C69 /* WebViewController.swift */,
+				0505ED0329053D390043B61D /* DiscoverTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +180,7 @@
 				051DCBA028DCEA840068AE61 /* RestaurantDetailTwoColumnCell.swift */,
 				051DCBAC28E1C1360068AE61 /* RestaurantDetailMapCell.swift */,
 				051FC56428EDDC4C002A99A6 /* RoundedTextField.swift */,
+				0505ED05290A70C90043B61D /* DiscoverTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				051DCB8928D75CE90068AE61 /* Restaurant.swift in Sources */,
+				0505ED06290A70C90043B61D /* DiscoverTableViewCell.swift in Sources */,
 				051DCBA628DF748D0068AE61 /* NavigationController.swift in Sources */,
 				05DF095F28F70AEE0072A1F8 /* WalkthroughPageViewController.swift in Sources */,
 				057FE09029006AAF00FC9C69 /* AboutTableViewController.swift in Sources */,
@@ -308,6 +317,7 @@
 				051DCB9D28DCC8690068AE61 /* RestaurantDetailHeaderView.swift in Sources */,
 				051DCB8528D492270068AE61 /* RestaurantTableViewController.swift in Sources */,
 				051DCBAF28E1D2AC0068AE61 /* MapViewController.swift in Sources */,
+				0505ED0429053D390043B61D /* DiscoverTableViewController.swift in Sources */,
 				051FC56B28F3FBEB002A99A6 /* FoodPin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,8 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CX9PUS2GJ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
@@ -490,8 +502,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CX9PUS2GJ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
