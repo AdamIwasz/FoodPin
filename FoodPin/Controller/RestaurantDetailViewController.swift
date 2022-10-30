@@ -138,9 +138,9 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
         
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailTwoColumnCell.self), for: indexPath) as! RestaurantDetailTwoColumnCell
-            cell.column1TitleLabel.text = "Address"
+            cell.column1TitleLabel.text = String(localized: "Address", comment: "Address label")
             cell.column1TextLabel.text = restaurnt.location
-            cell.column2TitleLabel.text = "Phone"
+            cell.column2TitleLabel.text = String(localized: "Phone", comment: "Phone label")
             cell.column2TextLabel.text = restaurnt.phone
             cell.selectionStyle = .none
             

@@ -1,0 +1,6 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Zezwól na dostęp do aparatu aby móc wykonywać zdjęcia z poziomu aplikacji.";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Zezwól na dostęp do galerii zdjęć aby móc wybrać zdjęcia swojej ulubionej restauracji.";
+

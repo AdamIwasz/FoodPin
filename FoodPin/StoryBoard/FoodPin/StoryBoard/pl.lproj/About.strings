@@ -1,0 +1,9 @@
+/* Class = "UILabel"; text = "Title"; ObjectID = "IWZ-VM-vUe"; */
+"IWZ-VM-vUe.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "S2o-gb-ZoM"; */
+"S2o-gb-ZoM.title" = "Informacje";
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "vGq-Af-eHr"; */
+"vGq-Af-eHr.title" = "Informacje";
+

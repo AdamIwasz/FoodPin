@@ -1,0 +1,60 @@
+/* Address label */
+"Address" = "Adres";
+
+/* Camera option in choose photo source alert */
+"Camera" = "Aparat";
+
+/* Choose your photo source text in alert */
+"Choose your photo source" = "Wybierz źródło zdjęcia";
+
+/* CREATE YOUR OWN FOOD GUIDE */
+"CREATE YOUR OWN FOOD GUIDE" = "STWÓRZ SWÓJ WŁASNY PRZEWODNIK";
+
+/* Delete button in swipe actions */
+"Delete" = "Usuń";
+
+/* DISCOVER GREAT RESTAURANTS */
+"DISCOVER GREAT RESTAURANTS" = "ODKRYWAJ ŚWIETNE RESTAURACJE";
+
+/* Find restaurants shared by your friends and other foodies */
+"Find restaurants shared by your friends and other foodies" = "Odkrywaj restauracje udostępnione przez Twoich znajomych oraz innych foodies";
+
+/* GET STARTED button in onborading */
+"GET STARTED" = "ZACZYNAJMY";
+
+/* Just check in at, text in share action */
+"Just check in at " = "Jestem właśnie w";
+
+/* NEXT button in onboarding */
+"NEXT" = "DALEJ";
+
+/* Phone label */
+"Phone" = "Numer telefonu";
+
+/* Photo library option in choose photo source alert */
+"Photo library" = "Galeria zdjęć";
+
+/* Pin your favorite restaurants and create your own food guide */
+"Pin your favorite restaurants and create your own food guide" = "Oznacz swoje ulubione restauracje i stwórz swój własny przewodnik";
+
+/* Rate us on App Store */
+"Rate us on App Store" = "Oceń nas na App Store";
+
+/* No comment provided by engineer. */
+"Search and locate your favourite restaurant on Maps" = "Wyszukaj swoje ulubione restauracje na mapie";
+
+/* Search restaurants... plachoder in search bar */
+"Search restaurants..." = "Szukaj restauracji...";
+
+/* Share button in swipe action */
+"Share" = "Udostępnij";
+
+/* SHOW YOU THE LOCATION */
+"SHOW YOU THE LOCATION" = "POKAŻ LOKALIZACJĘ";
+
+/* Tell us your feedback */
+"Tell us your feedback" = "Zostaw feedback";
+
+/* We can't proceed because one of the fields is blank. Please note that all fields are requaierd. Text displayed when some of the fields are empty while adding new restaurant */
+"We can't proceed because one of the fields is blank. Please note that all fields are requaierd." = "Nie możemy przejść dalej ponieważ jedno z pól jest puste. Proszę pamiętaj, wszystkie pola są wymagane.";
+

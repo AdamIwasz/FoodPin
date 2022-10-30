@@ -63,7 +63,7 @@ class RestaurantTableViewController: UITableViewController {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.placeholder = String(localized: "Search restaurants...", comment: "Search restaurants... plachoder in search bar")
         searchController.searchBar.backgroundImage = UIImage()
         searchController.searchBar.tintColor = UIColor(named: "NavigationBarTitle")
         tableView.tableHeaderView = searchController.searchBar
@@ -105,7 +105,7 @@ class RestaurantTableViewController: UITableViewController {
         }
         
         // Delete action
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: String(localized: "Delete", comment: "Delete button in swipe actions")) { (action, sourceView, completionHandler) in
             
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
                 let context = appDelegate.persistentContainer.viewContext
@@ -122,8 +122,8 @@ class RestaurantTableViewController: UITableViewController {
         }
         
         // Share action
-        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
-            let defaultText = "Just check in at " + restaurant.name
+        let shareAction = UIContextualAction(style: .normal, title: String(localized: "Share", comment: "Share button in swipe action")) { (action, sourceView, completionHandler) in
+            let defaultText = String(localized: "Just check in at ", comment: "Just check in at, text in share action ") + restaurant.name
             
             let activityController : UIActivityViewController
             

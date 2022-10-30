@@ -21,8 +21,8 @@ class AboutTableViewController: UITableViewController {
         var image: String
     }
     
-    var sectionContent = [[LinkItem(text: "Rate us on App Store", link: "https://www.apple.com/ios/app-store/", image: "store"),
-        LinkItem(text: "Tell us your feedback", link: "http://www.appcoda.com/contact", image: "chat")],
+    var sectionContent = [[LinkItem(text: String(localized: "Rate us on App Store", comment: "Rate us on App Store"), link: "https://www.apple.com/ios/app-store/", image: "store"),
+        LinkItem(text: String(localized: "Tell us your feedback", comment: "Tell us your feedback"), link: "http://www.appcoda.com/contact", image: "chat")],
                            [LinkItem(text: "Twitter", link: "https://twitter.com/appcodamobile", image: "twitter"),
                             LinkItem(text: "Facebook", link: "https://facebook.com/appcodamobile", image: "facebook"),
                             LinkItem(text: "Instagram", link: "https://www.instagram.com/appcodadotcom", image: "instagram")]]

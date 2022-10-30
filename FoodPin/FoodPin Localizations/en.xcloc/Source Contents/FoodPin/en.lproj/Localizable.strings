@@ -1,0 +1,60 @@
+/* Address label */
+"Address" = "Address";
+
+/* Camera option in choose photo source alert */
+"Camera" = "Camera";
+
+/* Choose your photo source text in alert */
+"Choose your photo source" = "Choose your photo source";
+
+/* CREATE YOUR OWN FOOD GUIDE */
+"CREATE YOUR OWN FOOD GUIDE" = "CREATE YOUR OWN FOOD GUIDE";
+
+/* Delete button in swipe actions */
+"Delete" = "Delete";
+
+/* DISCOVER GREAT RESTAURANTS */
+"DISCOVER GREAT RESTAURANTS" = "DISCOVER GREAT RESTAURANTS";
+
+/* Find restaurants shared by your friends and other foodies */
+"Find restaurants shared by your friends and other foodies" = "Find restaurants shared by your friends and other foodies";
+
+/* GET STARTED button in onborading */
+"GET STARTED" = "GET STARTED";
+
+/* Just check in at, text in share action  */
+"Just check in at " = "Just check in at ";
+
+/* NEXT button in onboarding */
+"NEXT" = "NEXT";
+
+/* Phone label */
+"Phone" = "Phone";
+
+/* Photo library option in choose photo source alert */
+"Photo library" = "Photo library";
+
+/* Pin your favorite restaurants and create your own food guide */
+"Pin your favorite restaurants and create your own food guide" = "Pin your favorite restaurants and create your own food guide";
+
+/* Rate us on App Store */
+"Rate us on App Store" = "Rate us on App Store";
+
+/* No comment provided by engineer. */
+"Search and locate your favourite restaurant on Maps" = "Search and locate your favourite restaurant on Maps";
+
+/* Search restaurants... plachoder in search bar */
+"Search restaurants..." = "Search restaurants...";
+
+/* Share button in swipe action */
+"Share" = "Share";
+
+/* SHOW YOU THE LOCATION */
+"SHOW YOU THE LOCATION" = "SHOW YOU THE LOCATION";
+
+/* Tell us your feedback */
+"Tell us your feedback" = "Tell us your feedback";
+
+/* We can't proceed because one of the fields is blank. Please note that all fields are requaierd. Text displayed when some of the fields are empty while adding new restaurant */
+"We can't proceed because one of the fields is blank. Please note that all fields are requaierd." = "We can't proceed because one of the fields is blank. Please note that all fields are requaierd.";
+
