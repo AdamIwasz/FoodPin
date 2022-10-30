@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="FoodPin/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="pl">
+  <file original="FoodPin/en.lproj/InfoPlist.strings" source-language="en" target-language="pl" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.0.1" build-num="14A400"/>
     </header>
@@ -21,7 +21,7 @@
       </trans-unit>
     </body>
   </file>
-  <file original="FoodPin/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="pl">
+  <file original="FoodPin/en.lproj/Localizable.strings" source-language="en" target-language="pl" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.0.1" build-num="14A400"/>
     </header>
@@ -118,7 +118,7 @@
       </trans-unit>
       <trans-unit id="Tell us your feedback" xml:space="preserve">
         <source>Tell us your feedback</source>
-        <target>Daj nam feedback</target>
+        <target>Zostaw feedback</target>
         <note>Tell us your feedback</note>
       </trans-unit>
       <trans-unit id="We can't proceed because one of the fields is blank. Please note that all fields are requaierd." xml:space="preserve">
@@ -135,17 +135,17 @@
     <body>
       <trans-unit id="6Pu-Cz-cYF.text" xml:space="preserve">
         <source>DESCRIPTION</source>
-        <target>DESCRIPTION</target>
+        <target>Opis</target>
         <note>Class = "UILabel"; text = "DESCRIPTION"; ObjectID = "6Pu-Cz-cYF";</note>
       </trans-unit>
       <trans-unit id="8qC-uF-4rd.text" xml:space="preserve">
         <source>Phone Number</source>
-        <target>Phone Number</target>
+        <target>Numer telefonu</target>
         <note>Class = "UILabel"; text = "Phone Number"; ObjectID = "8qC-uF-4rd";</note>
       </trans-unit>
       <trans-unit id="19g-iQ-Dk3.placeholder" xml:space="preserve">
         <source>Fill in the restaurant address</source>
-        <target>Fill in the restaurant address</target>
+        <target>Uzupełnij adres restauracji</target>
         <note>Class = "UITextField"; placeholder = "Fill in the restaurant address"; ObjectID = "19g-iQ-Dk3";</note>
       </trans-unit>
       <trans-unit id="66P-dx-SIG.text" xml:space="preserve">
@@ -367,12 +367,12 @@
       </trans-unit>
       <trans-unit id="S2o-gb-ZoM.title" xml:space="preserve">
         <source>About</source>
-        <target>About</target>
+        <target>Informacje</target>
         <note>Class = "UINavigationItem"; title = "About"; ObjectID = "S2o-gb-ZoM";</note>
       </trans-unit>
       <trans-unit id="vGq-Af-eHr.title" xml:space="preserve">
         <source>About</source>
-        <target>About</target>
+        <target>Informacje</target>
         <note>Class = "UITabBarItem"; title = "About"; ObjectID = "vGq-Af-eHr";</note>
       </trans-unit>
     </body>

@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "1wy-uF-PH6"; */
+"1wy-uF-PH6.text" = "Opis";
+
+/* Class = "UILabel"; text = "location"; ObjectID = "8lL-Q9-xWr"; */
+"8lL-Q9-xWr.text" = "Lokalizacja";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "Crg-E0-kt0"; */
+"Crg-E0-kt0.text" = "Nazwa";
+
+/* Class = "UILabel"; text = "type"; ObjectID = "WNy-Iw-Afm"; */
+"WNy-Iw-Afm.text" = "Typ";
+
+/* Class = "UINavigationItem"; title = "Discover"; ObjectID = "XcD-Sk-77R"; */
+"XcD-Sk-77R.title" = "Odkrywaj";
+
+/* Class = "UITabBarItem"; title = "Discover"; ObjectID = "Xrp-fk-xUr"; */
+"Xrp-fk-xUr.title" = "Odkrywaj";

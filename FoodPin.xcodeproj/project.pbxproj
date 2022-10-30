@@ -33,13 +33,13 @@
 		051FC56528EDDC4C002A99A6 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051FC56428EDDC4C002A99A6 /* RoundedTextField.swift */; };
 		051FC56828EDDF61002A99A6 /* NewRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051FC56728EDDF61002A99A6 /* NewRestaurantController.swift */; };
 		051FC56B28F3FBEB002A99A6 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 051FC56928F3FBEB002A99A6 /* FoodPin.xcdatamodeld */; };
-		051FC57128F6FE18002A99A6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051FC57028F6FE18002A99A6 /* Onboarding.storyboard */; };
 		057FE08C290068AA00FC9C69 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 057FE08A290068AA00FC9C69 /* About.storyboard */; };
-		057FE08E290068D500FC9C69 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 057FE08D290068D500FC9C69 /* Discover.storyboard */; };
 		057FE09029006AAF00FC9C69 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FE08F29006AAF00FC9C69 /* AboutTableViewController.swift */; };
 		057FE092290076B900FC9C69 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FE091290076B900FC9C69 /* WebViewController.swift */; };
 		05B58567290E9FD200E3ECF2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05B58565290E9FD200E3ECF2 /* InfoPlist.strings */; };
 		05B5856A290E9FD200E3ECF2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05B58568290E9FD200E3ECF2 /* Localizable.strings */; };
+		05B5856B290ED7A800E3ECF2 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B5856D290ED7A800E3ECF2 /* Onboarding.storyboard */; };
+		05B58570290ED7C800E3ECF2 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B58572290ED7C800E3ECF2 /* Discover.storyboard */; };
 		05DF095D28F707F90072A1F8 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DF095C28F707F90072A1F8 /* WalkthroughContentViewController.swift */; };
 		05DF095F28F70AEE0072A1F8 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DF095E28F70AEE0072A1F8 /* WalkthroughPageViewController.swift */; };
 		05DF096128F95CAD0072A1F8 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DF096028F95CAD0072A1F8 /* WalkthroughViewController.swift */; };
@@ -75,9 +75,7 @@
 		051FC56428EDDC4C002A99A6 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		051FC56728EDDF61002A99A6 /* NewRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantController.swift; sourceTree = "<group>"; };
 		051FC56A28F3FBEB002A99A6 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
-		051FC57028F6FE18002A99A6 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		057FE08B290068AA00FC9C69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPin/StoryBoard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
-		057FE08D290068D500FC9C69 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		057FE08F29006AAF00FC9C69 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		057FE091290076B900FC9C69 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		05B58562290E975E00E3ECF2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = FoodPin/StoryBoard/pl.lproj/About.strings; sourceTree = "<group>"; };
@@ -85,6 +83,10 @@
 		05B58564290E975E00E3ECF2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		05B58566290E9FD200E3ECF2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		05B58569290E9FD200E3ECF2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05B5856C290ED7A800E3ECF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
+		05B5856F290ED7AD00E3ECF2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Onboarding.strings; sourceTree = "<group>"; };
+		05B58571290ED7C800E3ECF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
+		05B58574290ED7CC00E3ECF2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Discover.strings; sourceTree = "<group>"; };
 		05DF095C28F707F90072A1F8 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		05DF095E28F70AEE0072A1F8 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		05DF096028F95CAD0072A1F8 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
@@ -162,11 +164,11 @@
 		051DCB8B28D7659D0068AE61 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				057FE08D290068D500FC9C69 /* Discover.storyboard */,
+				05B58572290ED7C800E3ECF2 /* Discover.storyboard */,
 				057FE08A290068AA00FC9C69 /* About.storyboard */,
 				051DCB7B28D466E20068AE61 /* LaunchScreen.storyboard */,
 				051DCB7628D466E10068AE61 /* Main.storyboard */,
-				051FC57028F6FE18002A99A6 /* Onboarding.storyboard */,
+				05B5856D290ED7A800E3ECF2 /* Onboarding.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -287,12 +289,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				051DCB9B28DCC37F0068AE61 /* Nunito-Regular.ttf in Resources */,
-				057FE08E290068D500FC9C69 /* Discover.storyboard in Resources */,
+				05B58570290ED7C800E3ECF2 /* Discover.storyboard in Resources */,
 				057FE08C290068AA00FC9C69 /* About.storyboard in Resources */,
 				051DCB7D28D466E20068AE61 /* LaunchScreen.storyboard in Resources */,
 				051DCB7A28D466E20068AE61 /* Assets.xcassets in Resources */,
 				05B5856A290E9FD200E3ECF2 /* Localizable.strings in Resources */,
-				051FC57128F6FE18002A99A6 /* Onboarding.storyboard in Resources */,
+				05B5856B290ED7A800E3ECF2 /* Onboarding.storyboard in Resources */,
 				051DCB9A28DCC37F0068AE61 /* Nunito-Bold.ttf in Resources */,
 				05B58567290E9FD200E3ECF2 /* InfoPlist.strings in Resources */,
 				051DCB7828D466E10068AE61 /* Main.storyboard in Resources */,
@@ -378,6 +380,24 @@
 				05B58569290E9FD200E3ECF2 /* pl */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		05B5856D290ED7A800E3ECF2 /* Onboarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05B5856C290ED7A800E3ECF2 /* Base */,
+				05B5856F290ED7AD00E3ECF2 /* pl */,
+			);
+			name = Onboarding.storyboard;
+			sourceTree = "<group>";
+		};
+		05B58572290ED7C800E3ECF2 /* Discover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05B58571290ED7C800E3ECF2 /* Base */,
+				05B58574290ED7CC00E3ECF2 /* pl */,
+			);
+			name = Discover.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

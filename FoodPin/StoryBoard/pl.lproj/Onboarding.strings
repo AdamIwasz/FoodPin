@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; configuration.title = "Skip"; ObjectID = "dfK-dy-mWG"; */
+"dfK-dy-mWG.configuration.title" = "Pomiń";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dfK-dy-mWG"; */
+"dfK-dy-mWG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "HEADING"; ObjectID = "jeE-6q-AKK"; */
+"jeE-6q-AKK.text" = "HEADING";
+
+/* Class = "UIButton"; configuration.title = "NEXT"; ObjectID = "oLG-Gu-t2O"; */
+"oLG-Gu-t2O.configuration.title" = "DALEJ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oLG-Gu-t2O"; */
+"oLG-Gu-t2O.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Subheading"; ObjectID = "qeY-3n-iry"; */
+"qeY-3n-iry.text" = "Subheading";
